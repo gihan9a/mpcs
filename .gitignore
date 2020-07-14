@@ -1,0 +1,24 @@
+# ignore configs
+webapp/protected/config/main.php
+webapp/protected/config/console.php
+webapp/protected/config/test.php
+
+# ignore asstest dir
+webapp/assets/*
+
+# ignore runtime matters
+webapp/protected/runtime
+webapp/nbproject/private/
+webapp/.buildpath
+webapp/.settings/
+webapp/.project
+
+# ignore docker artifacts
+docker/app/apache/logs/*
+docker/app/webapp/backups/*
+docker/app/webapp/logs/*
+docker/mysql/etc/*
+docker/mysql/lib/*
+docker/mysql/log/*
+docker/mysql/var/*
+backup/*

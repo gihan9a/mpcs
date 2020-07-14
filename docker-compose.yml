@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=bnfVvQK4yOw2
+            - MYSQL_DATABASE=mpcs
+            - MYSQL_USER=mpcs
+            - MYSQL_PASSWORD=hi6Aerei
+        ports: 
+            - "3306"
+        volumes:
+            - ./docker/mysql/lib:/var/lib/mysql
+            - ./docker/mysql/etc:/etc/mysql
+            - ./docker/mysql/var/run:/var/run/mysqld
+            - ./docker/mysql/log:/var/log/mysql
+    app:
+        build: .
+        environment: 
+            - MYSQL_HOST=mpcs
+            - MYSQL_USER=mpcs
+            - MYSQL_PASS=hi6Aerei
+            - MYSQL_DATABASE=mpcs
+        ports:
+            - "80:80"
+        volumes:
+            - ./docker/app/webapp/logs:/var/www/html/webapp/protected/runtime/logs
+            - ./docker/app/webapp/backups:/var/www/html/webapp/protected/backups
+            - ./docker/app/apache/logs:/var/log/apache
+        depends_on: 
+            - mysql
+        links:
+            - mysql
