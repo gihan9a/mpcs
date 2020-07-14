@@ -1,9 +1,11 @@
 # Samupakara Repository
 
+Only docker wrapper is hosted here at github.
+
 ## Directory structure
-`docker` directory contains docker configurations and volumes
-`framework` contains the `Yii 1` framework files
-`webapp` contains the application code
+`docker` contains docker configurations and volumes.  
+`framework` contains the `Yii 1` framework files.  
+`webapp` contains the application code.  
 
 ## Setting up backup cron
 Add Following to the host's cron tab. Confirm the variables in `cron.sh` file are corect.
